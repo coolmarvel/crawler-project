@@ -1,0 +1,26 @@
+{
+  "name": "crawler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node -r tsconfig-paths/register src/index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.1",
+    "firebase": "^10.7.2",
+    "node-schedule": "^2.1.1",
+    "puppeteer": "^21.9.0",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/node-schedule": "^2.1.5",
+    "@types/puppeteer": "^7.0.4",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.3.3"
+  }
+}
