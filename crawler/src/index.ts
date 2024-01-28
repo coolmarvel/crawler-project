@@ -5,3 +5,11 @@ const start = async () => {
   crawler.start();
 };
 start();
+
+// import nodeScheduler from "node-schedule";
+
+// nodeScheduler.scheduleJob("*/10 * * * * *", async () => {
+//   console.log("start crawler");
+
+//   console.log("end crawler");
+// });
