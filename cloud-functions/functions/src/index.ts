@@ -7,8 +7,8 @@
  * See a full list of supported triggers at https://firebase.google.com/docs/functions
  */
 
-import * as functions from "firebase-functions";
 // import { onRequest } from "firebase-functions/v2/https";
+import * as functions from "firebase-functions";
 import * as logger from "firebase-functions/logger";
 import Crawler from "./crawler";
 
@@ -31,4 +31,18 @@ export const startCrawler = functions
     await crawler.start();
 
     response.send("End Crawler");
+  });
+
+export const scheduleFunctionCronTab = functions
+  .region("asia-northeast3")
+  .runWith({ memory: "2GB", timeoutSeconds: 120 })
+  .pubsub.schedule("* 3 * * *")
+  .timeZone("Asia/Seoul")
+  .onRun(async () => {
+    functions.logger.info("Start Crawler Schedule", { structuredData: true });
+
+    const crawler = new Crawler();
+    await crawler.start();
+
+    return null;
   });
