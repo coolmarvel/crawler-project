@@ -11,6 +11,7 @@ const firebaseConfig = {
   storageBucket: process.env.STORAGE_BUCKET ?? "",
   messagingSenderId: process.env.MESSAING_SENDER_ID ?? "",
   appId: process.env.APP_ID ?? "",
+  measurementId: process.env.MEASUREMENT_ID ?? "",
 };
 
 export let app: FirebaseApp;
